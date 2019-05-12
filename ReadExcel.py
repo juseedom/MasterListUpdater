@@ -3,7 +3,7 @@ from xlutils.copy import copy
 import csv
 from datetime import datetime
 
-debug_file = r'D:\RNP&RNO\ENGINEER\Parameters\RF Parameter\log.txt'
+debug_file = r'.\log.txt'
 
 class RFMasterList():
   """docstring for MasterList"""
@@ -193,11 +193,11 @@ class ReadnCompare():
 
 if __name__ == '__main__':
 	#print datetime.now()
-	rf = RFMasterList(rf_path = "D:\\RNP&RNO\\ENGINEER\\Parameters\\RF Parameter\\20130604\\RF_MasterList20130604.xls")
+	rf = RFMasterList(rf_path = ".\\RF_MasterList20130604.xls")
 	print rf.cells["133900_1"]
-	ml = MasterList(ml_path = "D:\\RNP&RNO\\ENGINEER\\Parameters\\RF Parameter\\20130527\\M1 LTE MASTERLIST_HUAWEI_23 May 2013.xlsx")
+	ml = MasterList(ml_path = ".\\LTE MASTERLIST_23 May 2013.xlsx")
 	print ml.enodebs["133900"]
-	cme = CMEMasterList(cme_path = "D:\\RNP&RNO\\ENGINEER\\Parameters\\CME Data\\LTE_Status.csv")
+	cme = CMEMasterList(cme_path = ".\\LTE_Status.csv")
 	print cme.cells["133900_1"]
-	result = ReadnCompare(rf,ml,cme,"D:\\RNP&RNO\\ENGINEER\\Parameters\\CME Data\\reslut.xls")
-	result.Update2Excel("D:\\RNP&RNO\\ENGINEER\\Parameters\\CME Data\\reslut.xls")
+	result = ReadnCompare(rf,ml,cme,".\\reslut.xls")
+	result.Update2Excel(".\\reslut.xls")
